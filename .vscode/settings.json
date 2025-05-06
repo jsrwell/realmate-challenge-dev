@@ -1,0 +1,67 @@
+{
+  "python.languageServer": "Pylance", // ms-python.vscode-pylance
+  "python.testing.unittestEnabled": false, // ms-python.python
+  "python.testing.pytestEnabled": true,
+  "python.testing.pytestArgs": [], // -x to bail
+  "python.defaultInterpreterPath": ".venv/bin/python",
+  "pylint.enabled": true,
+  "pylint.importStrategy": "fromEnvironment",              
+  "pylint.path": ["${interpreter}", "-m", "pylint"],      
+  "pylint.args": [                                        
+    "--load-plugins=pylint_django",
+    "--django-settings-module=realmate_challenge.settings"
+  ],
+
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.autopep8", // ms-python.python
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.formatOnSave": false,
+    "editor.formatOnType": false,
+    "editor.codeActionsOnSave": [
+      "source.organizeImports"
+    ],
+    "editor.rulers": [
+      79
+    ],
+    "editor.wordWrap": "on",
+    "editor.wordWrapColumn": 79,
+  },
+  "[html]": {
+    "editor.formatOnSave": false,
+    "editor.tabSize": 4,
+    "editor.defaultFormatter": "vscode.html-language-features",
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": true,
+      "strings": true
+    }
+  },
+  "[django-html]": {
+    "editor.formatOnSave": false,
+    "editor.tabSize": 4,
+    "editor.defaultFormatter": "monosans.djlint",
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": true,
+      "strings": true
+    }
+  },
+  "files.associations": {
+    "*.js": "javascript",
+    "*.jsx": "javascriptreact",
+    "*.xml": "html",
+    "*.svg": "html",
+    "*.html": "html",
+    "django-html": "html",
+    "**/*.html": "html",
+    "**/templates/**/*.html": "django-html",
+    "**/base_templates/**/*.html": "django-html",
+    "**/requirements{/**,*}.{txt,in}": "pip-requirements"
+  },
+  "emmet.includeLanguages": {
+    "django-html": "html",
+    "javascript": "javascriptreact",
+    "typescript": "typescriptreact"
+  }
+}
